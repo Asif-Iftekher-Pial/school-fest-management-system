@@ -15,12 +15,12 @@ class AdminUserSeeder extends Seeder
     public function run()
     {
         DB::table('admins')->insert([
-                    'name' => 'Khalid Hossain',
-                    'email' => 'kadmin@gmail.com',
-                    'mobile' => '01720279279',
-                    'type' => 'Super Admin',
-                    'status' => 'Active',
-                    'password' => Hash::make('password'),
-                ]);
+            'name' => 'Khalid Hossain',
+            'email' => 'kadmin@gmail.com',
+            'mobile' => '01720279279',
+            'type' => 'Super Admin',
+            'status' => 'Active',
+            'password' => Hash::make('password'),
+        ]);
     }
 }
