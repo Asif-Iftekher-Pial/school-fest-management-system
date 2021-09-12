@@ -26,6 +26,7 @@ class PageController extends Controller
     public function index()
     {
         $pagedata = page::paginate(5);
+       
         return view('pial.Page.index', compact('pagedata'));
     }
 
@@ -48,11 +49,13 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'subtitle' => 'required',
-            'image' => 'required',
-            'status' => 'required',
-            'description' => 'required',
+            'main_menu' => 'required',
+            'menu_name' => 'required',
+            'menu_url'  => 'required|url',
+            'image'     => 'required',
+            'status'    => 'required',
+            'contant'   => 'required',
+            'layout'    => 'required',
         ]);
 
         $file = Input::file('image');
@@ -74,10 +77,12 @@ class PageController extends Controller
             $image->save($path . $filenewname);
 
             $member = new Page();
-            $member->title = $request->title;
-            $member->subtitle = $request->subtitle;
+            $member->main_menu = $request->main_menu;
+            $member->menu_name = $request->menu_name;
             $member->status = $request->status;
-            $member->description = $request->description;
+            $member->menu_url = $request->menu_url;
+            $member->contant = $request->contant;
+            $member->layout = $request->layout;
             $member->image = $filenewname;
             $ok = $member->save();
             return redirect()->route('pageSetup.index')->with('flash_message', 'Page added!');
@@ -141,10 +146,12 @@ class PageController extends Controller
             $image->resize(300, 300);
             $image->save($path . $filenewname);
 
-            $fontpage->title = $request->title;
+            $fontpage->main_menu = $request->main_menu;
             $fontpage->status = $request->status;
-            $fontpage->subtitle = $request->subtitle;
-            $fontpage->description = $request->description;
+            $fontpage->menu_name = $request->menu_name;
+            $fontpage->menu_url = $request->menu_url;
+            $fontpage->contant = $request->contant;
+            $fontpage->layout = $request->layout;
             $fontpage->image = $filenewname;
             $ok = $fontpage->update();
         } else {

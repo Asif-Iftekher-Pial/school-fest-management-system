@@ -58,6 +58,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li> -->
+          {{-- @dd($registration) --}}
           
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -67,13 +68,16 @@
               About us
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{ url('/mission_&_vission') }}">Mission & Vission</a>
+              @foreach ( $aboutus as $about )
+              <a class="dropdown-item" href="{{ $about->menu_url }}">{{ $about->menu_name }}</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ url('/chairman_message') }}">Chairman Message</a>
+              @endforeach
+              
+              {{-- <a class="dropdown-item" href="{{ url('/chairman_message') }}">Chairman Message</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ url('/about_us') }}">About Stem Fest</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ url('/terms_&_conditions') }}">Terms & Conditions</a>
+              <a class="dropdown-item" href="{{ url('/terms_&_conditions') }}">Terms & Conditions</a> --}}
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -81,9 +85,12 @@
               Registration
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{ url('/registration_process') }}">Registration Process</a>
+              @foreach ( $registration as $reg )
+              <a class="dropdown-item" href="{{ $reg->menu_url }}">{{ $reg->menu_name }}</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ url('/registration_notice') }}">Registration Notice</a>
+              @endforeach
+              
+              {{-- <a class="dropdown-item" href="{{ url('/registration_notice') }}">Registration Notice</a> --}}
               {{-- <a class="dropdown-item" href="#">Something else here</a> --}}
             </div>
           </li>
@@ -92,15 +99,12 @@
               Program
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Committee</a>
+              @foreach ( $program as $prog )
+              <a class="dropdown-item" href="{{ $prog->menu_url }}">{{ $prog->menu_name }}</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Schedule</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Main Event</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Applicant School</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Result</a>
+              @endforeach
+              
+              
             </div>
           </li>
           <!-- <li class="nav-item"><a class="nav-link" href="#"></a></li> -->

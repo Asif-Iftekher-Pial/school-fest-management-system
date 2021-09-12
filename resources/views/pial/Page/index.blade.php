@@ -20,9 +20,11 @@
                     <thead>
                         <tr>
                             <th>Sl No.</th>
-                            <th>Title</th>
-                            <th>Sub-Title</th>
-                            <th>Description</th>
+                            <th>Main Menu</th>
+                            <th>Sub-Menu</th>
+                            <th>Url</th>
+                            <th>Layout</th>
+                            <th>Contant</th>
                             <th>Image</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -32,18 +34,20 @@
                         @foreach($pagedata as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->title }}</td>
-                                <td>{{ $item->subtitle }}</td>
-                                <td>{!! $item->description !!}</td>
+                                <td>{{ $item->main_menu }}</td>
+                                <td>{{ $item->menu_name }}</td>
+                                <td>{{ $item->menu_url }}</td>
+                                <td>{{ $item->layout }}</td>
+                                <td>{{ $item->contant }}</td>
                                 <td>
                                     <img src="{{ asset('uploads/pages/'.$item->image) }}" alt="Album Image" style="max-height: 60px;">
                                 </td>
                                 <td>
                                     @php 
-                                        if($item->status >0){
+                                        if($item->status > 0){
                                             echo "Active";
                                         }else{
-                                            echo"Inactive";
+                                            echo "Inactive";
                                         }
                                     @endphp
                                 </td>

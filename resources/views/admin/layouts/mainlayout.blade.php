@@ -19,6 +19,8 @@
                 font-family: 'Manrope', sans-serif;
             }
         </style>
+        <link rel="stylesheet" href="{{ asset('back/assets/summernote/summernote.css') }}">
+        
     </head>
     <body class="sb-nav-fixed">
         
@@ -62,6 +64,13 @@
         // read the image file as a data URL.
         reader.readAsDataURL(this.files[0]);
         };
+        </script>
+
+        <script src="{{ asset('back/assets/summernote/summernote.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $('#summernote').summernote();
+            });
         </script>
 
         @yield('java_script')
