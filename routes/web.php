@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -90,6 +91,12 @@ Route::resource('/admin/albums', 'Admin\AlbumController');
 Route::resource('/admin/albumimages', 'Admin\ImageController');
 Route::resource('/admin/committees', 'Admin\CommitteeController');
 Route::resource('/admin/videogallery', 'Admin\VideoGalleryController');
+
+
+Route::resource('/admin/pageSetup','Admin\PageController');
+Route::resource('/admin/mission','Admin\MissionVissionController');
+Route::resource('/admin/chairman','Admin\ChairmanMessageController');
+
 
 Route::get('/{any}', function ($any) {
 

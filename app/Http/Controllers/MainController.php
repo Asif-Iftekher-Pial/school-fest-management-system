@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Redirect,Response;
-
 use Auth;
-use App\Sponsor;
+
 use App\Album;
+
+use App\Sponsor;
 use App\Albumimage;
 use App\SliderImage;
 use App\Videogallery;
+use Redirect,Response;
+use App\Missionvission;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -23,7 +24,8 @@ class MainController extends Controller
 
     public function mission()
     {
-    	return view('pages.about.mission');
+        $data=Missionvission::first();
+    	return view('pages.about.mission',compact('data'));
     }
     public function conditions()
     {
@@ -31,7 +33,8 @@ class MainController extends Controller
     }
     public function message()
     {
-    	return view('pages.about.message');
+        $data=Missionvission::select('id','chair_message','chair_image')->first();
+    	return view('pages.about.message',compact('data'));
     }
     public function about()
     {

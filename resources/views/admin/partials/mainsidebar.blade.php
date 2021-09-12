@@ -66,6 +66,11 @@
                 <a class="nav-link" href=""><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>History</a>
 
                 <div class="sb-sidenav-menu-heading">Page Setup</div>
+                <a class="nav-link" href="{{ route('pageSetup.index') }}"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>Page setup</a>
+                <a class="nav-link" href="{{ route('chairman.index') }}"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>Chairman message</a>
+                <a class="nav-link" href="#"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>About Us</a>
+                <a class="nav-link" href="{{ route('mission.index') }}"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>Mission and Vission</a>
+                
                 <a class="nav-link" href="{{ route('committees.index') }}"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>Committee List</a>
                 <a class="nav-link" href="{{ route('sliderimages.index') }}"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>Slider Images</a>
                 <a class="nav-link" href="{{ route('sponsors.index') }}"><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>Sponsors List</a>
